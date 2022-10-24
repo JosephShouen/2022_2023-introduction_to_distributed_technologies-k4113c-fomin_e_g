@@ -4,6 +4,6 @@ Course: [Introduction to distributed technologies](https://github.com/itmo-ict-f
 Year: 2022/2023
 Group: K4113c
 Author: Fomin Eugene Georgievich
-Lab: Lab1
+Lab: Lab2
 Date of create: 24.10.2022
 Date of finished:
