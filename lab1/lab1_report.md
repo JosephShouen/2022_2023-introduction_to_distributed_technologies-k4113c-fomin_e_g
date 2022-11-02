@@ -7,3 +7,6 @@ Author: Fomin Eugene Georgievich
 Lab: Lab1
 Date of create: 24.10.2022
 Date of finished:
+
+# Скачаем образ Vault, проверим его наличие
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab1/7.png)
