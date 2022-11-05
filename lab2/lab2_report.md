@@ -46,7 +46,7 @@ spec:
                   value: value_2  
 
 # 5. Создадим Deployment на основе yaml файла. 
-После создадим сервер и прокинем порт
+После создадим сервис и прокинем порт
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab2/5.png)
 
 # 6. Зайдем на localhost:3000
