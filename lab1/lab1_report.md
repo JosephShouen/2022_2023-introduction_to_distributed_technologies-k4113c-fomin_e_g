@@ -8,13 +8,10 @@ Lab: Lab1
 Date of create: 24.10.2022  
 Date of finished:  
 
-# 1. Скачаем образ Vault, проверим его наличие
-![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab1/7.png)
-
-# 2. Запустим Minicube
+# 1. Запустим Minikube
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab1/1.png)
 
-# 3. Создадим yaml файл для пода
+# 2. Создадим yaml файл для пода
 apiVersion: v1  
 kind: Pod  
 metadata: 
@@ -26,14 +23,14 @@ containers:
 - name: vault  
 image: vault:latest  
 
-# 4. Создадим сам под на основе yaml файла. 
+# 3. Создадим сам под на основе yaml файла. 
 После убедимся, что он работает, запустим сервер и прокинем порт
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab1/1%20(1-%D1%8F%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F).png)
 
-# 5. Удостоверимся, что все прошло успешно. Зайдём на http://localhost:8200
+# 4. Удостоверимся, что все прошло успешно. Зайдём на http://localhost:8200
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab1/2.png)
 
-# 6. Выведем лог, чтобы найти токен для входа, и используем его
+# 5. Выведем лог, чтобы найти токен для входа, и используем его
 toshiba@toshiba-SATELLITE-L735:~$ minikube kubectl logs vault  
 Couldn't start vault with IPC_LOCK. Disabling IPC_LOCK, please use --cap-add IPC_LOCK  
 ==> Vault server configuration:  
