@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+    name: ifilyaninitmo-replicaset
+    labels:
+        app: ifilyaninitmo-replicaset
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: ifilyaninitmo-replicaset
+    template:
+        metadata:
+            labels:
+                app: ifilyaninitmo-replicaset
+        spec:
+            containers:
+            - name: ifilyaninitmo-replicaset
+              image: ifilyaninitmo/itdt-contained-frontend:master
+              ports:
+              - containerPort: 3000
+              env:
+                - name: REACT_APP_USERNAME
+                  valueFrom:
+                    configMapKeyRef:
+                      name: ifilyaninitmo
+                      key: REACT_APP_USERNAME
+                - name: REACT_APP_COMPANY_NAME
+                  valueFrom:
+                    configMapKeyRef:
+                      name: ifilyaninitmo
+                      key: REACT_APP_COMPANY_NAME
