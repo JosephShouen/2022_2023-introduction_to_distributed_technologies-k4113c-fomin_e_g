@@ -78,8 +78,17 @@ spec:
 
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/6.png)
 
-# 5. Зайдем в файл hosts, пропишем FQDN и IP адрес ingress, попробуем зайти...
+# 5. Зайдем в файл hosts, пропишем FQDN и IP адрес ingress
 
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/8.png)
 
-# 6. Ничего не работает
+# 6. После этих действий не заходит на сайт. Исправим ситуацию с помощью minikube tunnel.
+
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/10.png)
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/11.png)
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/12.png)
+
+Все работает, ура
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/9.png)
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/13.png)
+
