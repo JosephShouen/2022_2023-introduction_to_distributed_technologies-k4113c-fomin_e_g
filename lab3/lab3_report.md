@@ -13,7 +13,7 @@ Date of finished:
 
 # 2. Создадим Replicaset посредством yaml файла
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/2.png)
-''' yaml '''
+'''yaml
 apiVersion: apps/v1  
 kind: ReplicaSet  
 metadata:  
@@ -46,7 +46,7 @@ spec:
                     configMapKeyRef:  
                       name: ifilyaninitmo  
                       key: REACT_APP_COMPANY_NAME  
-''' yaml '''
+'''
 
 # 3. Включим minikube addons enable ingress, сгенерируем TLS сертификат, импортировать сертификат в minikube. 
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/3.png)
