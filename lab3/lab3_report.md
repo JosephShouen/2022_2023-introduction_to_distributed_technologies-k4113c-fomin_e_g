@@ -82,5 +82,5 @@ spec:
 
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/8.png)
 
-# 6. Ничего не работает, сайт не открывается. Если по старинке перебросить порт port-forward'ом - все, конечно же, хорошо 
+# 6. Ничего не работает. Если использовать port-forward и зайти по localhost - все, конечно же, хорошо 
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/7.png)
