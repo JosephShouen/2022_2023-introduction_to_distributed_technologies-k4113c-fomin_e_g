@@ -55,7 +55,7 @@ spec:
 
 # 4. Создадим ingress в minikube посредством yaml файла, где указан ранее импортированный сертификат, FQDN и имя сервиса.
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/5.png)
-
+```yaml
 apiVersion: networking.k8s.io/v1  
 kind: Ingress  
 metadata:  
@@ -76,7 +76,7 @@ spec:
             name: ifilyaninitmo-replicaset  
             port:  
               number: 3000  
-
+```
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/6.png)
 
 # 5. Зайдем в файл hosts, пропишем FQDN и IP адрес ingress
