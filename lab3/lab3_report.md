@@ -11,3 +11,72 @@ Date of finished:
 # 1. Создадим Configmap командой
 ![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/1.png)
 
+# 2. Создадим Replicaset посредством yaml файла
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/2.png)
+
+apiVersion: apps/v1  
+kind: ReplicaSet  
+metadata:  
+    name: ifilyaninitmo-replicaset  
+    labels:  
+        app: ifilyaninitmo-replicaset  
+spec:  
+    replicas: 2  
+    selector:  
+        matchLabels:  
+            app: ifilyaninitmo-replicaset  
+    template:  
+        metadata:  
+            labels:  
+                app: ifilyaninitmo-replicaset  
+        spec:  
+            containers:  
+            - name: ifilyaninitmo-replicaset  
+              image: ifilyaninitmo/itdt-contained-frontend:master  
+              ports:  
+              - containerPort: 3000  
+              env:  
+                - name: REACT_APP_USERNAME  
+                  valueFrom:  
+                    configMapKeyRef:  
+                      name: ifilyaninitmo  
+                      key: REACT_APP_USERNAME  
+                - name: REACT_APP_COMPANY_NAME  
+                  valueFrom:  
+                    configMapKeyRef:  
+                      name: ifilyaninitmo  
+                      key: REACT_APP_COMPANY_NAME  
+                     
+# 3. Включим minikube addons enable ingress, сгенерируем TLS сертификат, импортировать сертификат в minikube. 
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/3.png)
+
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/4.png)
+
+# 4. Создадим ingress в minikube посредством yaml файла, где указан ранее импортированный сертификат, FQDN и имя сервиса.
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/5.png)
+
+apiVersion: networking.k8s.io/v1  
+kind: Ingress  
+metadata:  
+  name: ifilyaninitmo-ingress  
+spec:  
+  tls:  
+  - hosts:  
+      - sleepingjoshua.com  
+    secretName: ifilyaninitmo-secret  
+  rules:  
+  - host: sleepingjoshua.com  
+    http:  
+      paths:  
+      - path: /  
+        pathType: Prefix  
+        backend:  
+          service:  
+            name: ifilyaninitmo-replicaset  
+            port:  
+              number: 3000  
+
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/6.png)
+
+# 5. Ничего не работает, сайт не открывается. Если по старинке перебросить порт port-forward'ом - все, конечно же, хорошо 
+![Альтернативный текст](https://github.com/JosephShouen/2022_2023-introduction_to_distributed_technologies-k4113c-fomin_e_g/blob/main/lab3/7.png)
