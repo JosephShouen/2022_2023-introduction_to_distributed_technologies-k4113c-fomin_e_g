@@ -15,11 +15,6 @@ Date of finished:
 
 # 2. Создадим манифест для Calico 
 ```yaml
-# Calico Version master
-# https://projectcalico.docs.tigera.io/releases#master
-# This manifest includes the following component versions:
-#   calico/ctl:v3.20.0
-
 apiVersion: v1
 kind: ServiceAccount
 metadata:
